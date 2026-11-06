@@ -41,6 +41,20 @@ namespace Files.App.Data.Models
 			set => SetProperty(ref customIconSource, value);
 		}
 
+		private string? folderColorHex;
+		public string? FolderColorHex
+		{
+			get => folderColorHex;
+			set => SetProperty(ref folderColorHex, value);
+		}
+
+		private string? folderDescription;
+		public string? FolderDescription
+		{
+			get => folderDescription;
+			set => SetProperty(ref folderDescription, value);
+		}
+
 		private bool loadCustomIcon;
 		public bool LoadCustomIcon
 		{

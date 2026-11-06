@@ -148,6 +148,26 @@ namespace Files.App.Utils
 			set => SetProperty(ref hasTags, value);
 		}
 
+		private string? folderColorHex;
+		public string? FolderColorHex
+		{
+			get => folderColorHex;
+			set => SetProperty(ref folderColorHex, value);
+		}
+
+		private string? folderDescription;
+		public string? FolderDescription
+		{
+			get => folderDescription;
+			set
+			{
+				if (SetProperty(ref folderDescription, value))
+					OnPropertyChanged(nameof(HasFolderDescription));
+			}
+		}
+
+		public bool HasFolderDescription => !string.IsNullOrWhiteSpace(folderDescription);
+
 		private CloudDriveSyncStatusUI syncStatusUI = new();
 		public CloudDriveSyncStatusUI SyncStatusUI
 		{

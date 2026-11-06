@@ -41,6 +41,8 @@ namespace Files.App.ViewModels.Properties
 			ViewModel.ItemCreatedTimestampReal = Item.ItemDateCreatedReal;
 			ViewModel.LoadCustomIcon = Item.LoadCustomIcon;
 			ViewModel.CustomIconSource = Item.CustomIconSource;
+			ViewModel.FolderColorHex = Item.FolderColorHex;
+			ViewModel.FolderDescription = Item.FolderDescription;
 			ViewModel.LoadFileIcon = Item.LoadFileIcon;
 			ViewModel.ContainsFilesOrFolders = Item.ContainsFilesOrFolders;
 
@@ -206,6 +208,14 @@ namespace Files.App.ViewModels.Properties
 			var itemPath = Item.GetRequiredPath();
 			switch (e.PropertyName)
 			{
+				case nameof(ViewModel.FolderColorHex):
+					Item.FolderColorHex = ViewModel.FolderColorHex;
+					break;
+
+				case nameof(ViewModel.FolderDescription):
+					Item.FolderDescription = ViewModel.FolderDescription;
+					break;
+
 				case nameof(ViewModel.IsHidden):
 					if (ViewModel.IsHidden is not null)
 					{
